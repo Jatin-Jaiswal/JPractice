@@ -9,7 +9,7 @@
     "serve": "^14.2.4"
   },
   "scripts": {
-    "start": "npx serve -s build -l 8080",
+    "start": "npx serve -s build -l 3000",
     "build": "npx react-scripts build"
   },
   "browserslist": {
