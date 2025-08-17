@@ -42,7 +42,7 @@ pipeline {
                 script {
                     sh """
                         docker ps -q --filter 'name=my-app-frontend' | grep -q . && docker stop my-app-frontend && docker rm my-app-frontend || true
-                        docker run -d --name my-app-frontend -p 8080:8080 $FRONTEND_ECR_REPO:$IMAGE_TAG
+                        docker run -d --name my-app-frontend -p 3000:3000 $FRONTEND_ECR_REPO:$IMAGE_TAG
                         docker ps -q --filter 'name=my-app-backend' | grep -q . && docker stop my-app-backend && docker rm my-app-backend || true
                         docker run -d --name my-app-backend -p 5000:5000 $BACKEND_ECR_REPO:$IMAGE_TAG
                     """
